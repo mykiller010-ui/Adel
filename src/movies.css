@@ -4,3 +4,11 @@ html{scroll-behavior:smooth}body{height:auto;min-height:100vh}.scene{position:re
 .links .chip{font-size:12px;letter-spacing:.16em;padding:.75rem 1.15rem}
 .links .chip:disabled{opacity:.65;cursor:default}
 .links .chip:disabled:hover{transform:none;box-shadow:none}
+.kanji {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(1.8rem, 7vw, 4.5rem);
+  font-weight: 400;
+  font-style: italic;
+  line-height: 1.2;
+  letter-spacing: 0.02em;
+}
