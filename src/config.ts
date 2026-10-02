@@ -15,7 +15,7 @@ export interface Track {
 }
 
 export const profile = {
-  kanji: "夜",
+  kanji: "Memento vivere",
   name: "Adel",
   tagline: "MY LITTLE CORNER",
   description: "I’m an art enthusiast who loves reading, growing as a person, and finding little moments that calm my soul. Kindness and compassion are the qualities I admire most in people I have many ambitions  but my biggest dream is to become an architect. For now  I’m a girl finding her way in this world  learning as I go  and hoping to contribute something meaningful to it.",
