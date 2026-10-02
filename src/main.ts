@@ -3,16 +3,51 @@ import "@fontsource/zen-kaku-gothic-new/latin-500.css";
 import "@fontsource/zen-kaku-gothic-new/latin-700.css";
 import "./style.css";
 import "./movies.css";
-import { profile, tracks, slides, settings } from "./config";
+import { profile, links, tracks, slides, settings } from "./config";
 import { startSlideshow } from "./slideshow";
 import { startSnow } from "./snow";
 import { initTilt } from "./tilt";
 import { createPlayer } from "./player";
 import { initCursor } from "./cursor";
+import { icons } from "./icons";
 
 const $ = <T extends HTMLElement>(s:string):T => document.querySelector(s) as T;
 $("#name").textContent=profile.name;
 $("#kanji").textContent=profile.kanji;
+$("#tagline").textContent=profile.tagline;
+$("#description").textContent=profile.description;
+const socialNav=$("#links");
+const movieButton=socialNav.firstElementChild;
+for(const social of links){
+ const url=social.href?.trim();
+ const username=social.copy?.trim();
+ const button=document.createElement(url?'a':'button');
+ button.className='chip';
+ button.style.setProperty('--c',social.color);
+ const svg=document.createElementNS('http://www.w3.org/2000/svg','svg');
+ svg.setAttribute('viewBox','0 0 24 24');svg.setAttribute('aria-hidden','true');
+ const path=document.createElementNS('http://www.w3.org/2000/svg','path');
+ path.setAttribute('d',icons[social.icon]);svg.append(path);
+ const label=document.createElement('span');label.textContent=social.label;
+ button.append(svg,label);
+ if(button instanceof HTMLAnchorElement && url){
+  button.href=url;button.target='_blank';button.rel='noopener noreferrer';
+ }else if(button instanceof HTMLButtonElement){
+  button.type='button';
+  if(username){
+   button.addEventListener('click',async()=>{
+    const toast=$("#toast");
+    try{await navigator.clipboard.writeText(username);toast.textContent='Discord username copied: '+username;}
+    catch{toast.textContent='Discord: '+username;}
+    toast.classList.add('show');window.setTimeout(()=>toast.classList.remove('show'),4000);
+   });
+  }else{
+   button.disabled=true;button.title=social.label+' profile not added yet';
+   button.setAttribute('aria-label',social.label+' — profile not added yet');
+  }
+ }
+ socialNav.insertBefore(button,movieButton);
+}
 startSlideshow($("#bg"),slides,settings);
 startSnow($<HTMLCanvasElement>("#snow"));
 initTilt($("#tilt"));
