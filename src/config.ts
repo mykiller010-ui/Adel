@@ -32,27 +32,27 @@ export const links: SocialLink[] = [
 export const tracks: Track[] = [
   {
     title: "Caleb Belkin - I Fall In Love Too Easily",
-    src: "/music/caleb_belkin_i_fall_in_love_too_easily.mp3",
+    src: "/music/caleb_belkin_i_fall_in_love_too_easily1.mp3",
   },
   {
     title: "Hisohkah - School Rooftop",
-    src: "/music/hisohkah_school_rooftop.mp3",
+    src: "/music/hisohkah_school_rooftop1.mp3",
   },
   {
     title: "Kudasai - Dream Of Her",
-    src: "/music/kudasai_dream_of_her.mp3",
+    src: "/music/kudasai_dream_of_her1.mp3",
   },
   {
     title: "Kudasai - The Girl I Haven't Met",
-    src: "/music/kudasai_the_girl_i_havent_met.mp3",
+    src: "/music/kudasai_the_girl_i_havent_met1.mp3",
   },
   {
     title: "Lovey - Ever Since",
-    src: "/music/lovey_ever_since.mp3",
+    src: "/music/lovey_ever_since1.mp3",
   },
   {
     title: "Yagih Mael - Fly Me To The Moon",
-    src: "/music/yagih_mael_fly_me_to_the_moon.mp3",
+    src: "/music/yagih_mael_fly_me_to_the_moon1.mp3",
   },
 ];
 
